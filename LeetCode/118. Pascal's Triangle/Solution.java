@@ -1,20 +1,23 @@
-import java.util.*;
-
 class Solution {
     public List<List<Integer>> generate(int numRows) {
         
+        List<List<Integer>> list = new ArrayList<>();
 
-        List<List<Integer>> lists = new ArrayList<>();
-        lists.add(Arrays.asList(1));
-        lists.add(Arrays.asList(1, 1));
+        for (int x = 0; x <= numRows -1; x++) {
+            List<Integer> row = new ArrayList<>();
 
+            for (int j = 0; j <= x; j++) {
+                if (j == 0 || j == x) {
+                    row.add(1);
+                } else {
+                    row.add(list.get(x - 1).get(j - 1) + list.get(x - 1).get(j));
+                }
+            }
 
-
-        for (int x = 2; x <= numRows; x++) {
-
-            lists.set(x, lists.get(x).get(0));
-
+            list.add(row);
+            
         }
 
+        return list;
     }
 }
