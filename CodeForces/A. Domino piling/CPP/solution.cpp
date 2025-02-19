@@ -9,7 +9,7 @@ int main() {
 
     board_area = m * n;
 
-    cout << ceil(board_area / 2);
+    cout << board_area / 2;
 
     return 0;
 }
