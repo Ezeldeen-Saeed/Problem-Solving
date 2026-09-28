@@ -3,18 +3,22 @@
 using namespace std;
 
 int main() {
-    int n, h;
+    int n, h, minw = 0;
     cin >> n >> h;
 
-    vector<int> vec;
-
-    for (int x = n; x <= 0; x--) {
-        cin >> vec.at(x);
+    int i;
+    for (int x = 0; x < n; x++) {
+      cin >> i;
+      if (i > h) {
+        minw += 2;
+      } else {
+        minw += 1;
+      }
     }
 
-    for (int x : vec) {
-        cout << x;
-    }
+    cout << minw << endl;
+
+
 
     return 0;
 }
